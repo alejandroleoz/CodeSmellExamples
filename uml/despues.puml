@@ -1,0 +1,60 @@
+@startuml
+
+
+class Persona {
+    - nombre:String
+    - apellido: String
+    - fechaNacimiento: Date
+    '- domicilio: Domicilio
+    '- rol:Rol
+
+    + Persona()
+    + Persona(nombre:String, apellido:String)
+    + Persona(nombre:String, apellido:String, fechaNacimiento:Date)
+    - void init()
+    '+ getDomicilio(): Domicilio
+    '+ setDomicilio(domicilio:Domicilio): void
+    '+ getRol(): Rol
+    '+ setRol(rol:Rol): void
+    + estaAutorizado(): boolean
+}
+
+
+class Domicilio {
+    -provincia:String;
+    -localidad:String;
+    -calle:String;
+    -numero:String;
+    + Domicilio(provincia:String,  localidad:String, calle:String, numero:int)
+    + toString(): String
+    + void print()
+}
+
+
+interface Rol {
+    + estaAutorizado(persona:Persona): boolean
+}
+
+class UserRol implements Rol {
+    + estaAutorizado(persona:Persona): boolean
+}
+
+class AdminRol implements Rol {
+    + estaAutorizado(persona:Persona): boolean
+}
+
+class GuestRol implements Rol {
+    + estaAutorizado(persona:Persona): boolean
+}
+
+class NullRol implements Rol {
+    + estaAutorizado(persona:Persona): boolean
+}
+
+
+' Relations ---------------------
+Persona "rol" --> Rol
+Persona "domicilio" --> Domicilio
+
+
+@enduml

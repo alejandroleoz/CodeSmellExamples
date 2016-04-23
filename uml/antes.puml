@@ -1,0 +1,36 @@
+@startuml
+
+class Persona {
+    - nombre:String
+    - apellido: String
+    - fechaNacimiento: Date
+    - provincia: String
+    - localidad: String
+    - calle: String
+    - numero: int
+    - rol: String
+
+    + Persona()
+
+    + Persona(nombre:String, apellido:String)
+
+    + Persona(nombre:String, apellido:String, fechaNacimiento:Date)
+
+    - init() : void
+
+    + getNombre() : String
+
+    +  getApellido(): String
+
+    +  setDomicilio(provincia: String, localidad:String, calle:String, numero:int): void
+
+    +  printDomicilio(): void
+    
+    +  getRol(): String
+
+    +  setRol(rol:String)
+
+    + boolean estaAutorizado()
+}
+
+@enduml
