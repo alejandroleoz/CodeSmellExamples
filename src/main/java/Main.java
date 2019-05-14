@@ -8,7 +8,7 @@ import java.util.Date;
 public class Main {
 
     public static void main(String[] args) {
-//        new Main().ejecutarAntes();
+        new Main().ejecutarAntes();
         new Main().ejecutarDespues();
     }
 
